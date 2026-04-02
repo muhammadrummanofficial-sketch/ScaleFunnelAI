@@ -1,0 +1,82 @@
+@import url('https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@700,800&f[]=satoshi@400,500,300&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --purple: #7c3aed;
+  --black: #0a0a0a;
+  --white: #ffffff;
+  --soft-purple: #f3f0ff;
+  --gray: #9ca3af;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Satoshi', sans-serif;
+  color: var(--black);
+  background: var(--white);
+  font-size: 17px;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+h1, h2, h3 {
+  font-family: 'Cabinet Grotesk', sans-serif;
+}
+
+h1 {
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 40px;
+  }
+  h2 {
+    font-size: 32px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  body {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 34px;
+  }
+  h2 {
+    font-size: 28px;
+  }
+}
+
+*:focus-visible {
+  outline: 2px solid var(--purple);
+  outline-offset: 2px;
+}
