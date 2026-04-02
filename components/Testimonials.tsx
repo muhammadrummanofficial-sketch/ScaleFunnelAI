@@ -21,7 +21,7 @@ const testimonials = [
   },
   {
     quote:
-      "I had the leads but they kept going cold. The dynamic email system fixed that completely. Different messages for different people — it actually works.",
+      "I had the leads but they kept going cold. The dynamic email system fixed that completely. Different messages for different people \u2014 it actually works.",
     name: "Priya K.",
     role: "Life Coach",
     initials: "PK",
@@ -33,7 +33,7 @@ export default function Testimonials() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="bg-white py-[100px]">
+    <section className="bg-white py-16 sm:py-[100px]">
       <motion.div
         ref={ref}
         variants={staggerContainer}
@@ -49,30 +49,30 @@ export default function Testimonials() {
         </motion.p>
         <motion.h2
           variants={fadeInUp}
-          className="text-[#0a0a0a] text-center mb-12"
+          className="text-[#0a0a0a] text-center mb-10 sm:mb-12"
         >
-          Don&apos;t Take Our Word For It
+          They Took the Quiz. Then Everything Changed.
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           {testimonials.map((t) => (
             <motion.div
               key={t.name}
               variants={fadeInUp}
-              className="bg-[#f3f0ff] rounded-2xl p-8"
+              className="bg-[#f3f0ff] rounded-2xl p-6 sm:p-8"
             >
               <div className="flex gap-0.5 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <span key={i} className="text-[#7c3aed] text-[20px]">
-                    ★
+                    &#9733;
                   </span>
                 ))}
               </div>
-              <p className="font-satoshi font-light italic text-[16px] text-[#0a0a0a] leading-[1.8] mb-6">
+              <p className="font-satoshi font-light italic text-[15px] sm:text-[16px] text-[#0a0a0a] leading-[1.8] mb-6">
                 &ldquo;{t.quote}&rdquo;
               </p>
               <div className="border-t border-[rgba(124,58,237,0.15)] pt-4 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#7c3aed] flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-[#7c3aed] flex items-center justify-center flex-shrink-0">
                   <span className="font-satoshi font-medium text-white text-[13px]">
                     {t.initials}
                   </span>

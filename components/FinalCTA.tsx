@@ -9,7 +9,7 @@ export default function FinalCTA() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="bg-[#7c3aed] py-20" id="final-cta">
+    <section className="bg-[#7c3aed] py-16 sm:py-20" id="final-cta">
       <motion.div
         ref={ref}
         variants={staggerContainer}
@@ -19,32 +19,33 @@ export default function FinalCTA() {
       >
         <motion.h2
           variants={fadeInUp}
-          className="font-cabinet font-extrabold text-[48px] md:text-[48px] text-white mb-6 leading-tight"
+          className="font-cabinet font-extrabold text-[36px] sm:text-[48px] text-white mb-6 leading-tight"
         >
-          Ready to Scale Without the Chaos?
+          Stop Guessing. Start Growing.
         </motion.h2>
         <motion.p
           variants={fadeInUp}
-          className="font-satoshi text-[18px] text-[rgba(255,255,255,0.75)] max-w-[560px] mx-auto mb-10 leading-[1.8]"
+          className="font-satoshi text-base sm:text-[18px] text-[rgba(255,255,255,0.75)] max-w-[560px] mx-auto mb-10 leading-[1.8]"
         >
-          Take the free 2-minute growth audit and find out exactly what&apos;s
-          holding your coaching business back.
+          5 questions. 2 minutes. A complete diagnosis of what&apos;s actually
+          stopping your coaching business from scaling — and a free plan to fix
+          it.
         </motion.p>
         <motion.div variants={fadeInUp}>
           <motion.a
             href="#"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
-            className="inline-block font-cabinet font-bold text-[16px] text-[#7c3aed] bg-white rounded-[10px] px-8 py-4"
+            className="inline-block w-full sm:w-auto font-cabinet font-bold text-[16px] text-[#7c3aed] bg-white rounded-[10px] px-8 py-4 text-center"
           >
-            Start the Free Audit &rarr;
+            Take the Free Quiz Now &rarr;
           </motion.a>
         </motion.div>
         <motion.p
           variants={fadeInUp}
           className="font-satoshi text-[13px] text-[rgba(255,255,255,0.5)] mt-6"
         >
-          No credit card. No commitment. Results in under 60 seconds.
+          No email required to start. Results in under 60 seconds.
         </motion.p>
       </motion.div>
     </section>

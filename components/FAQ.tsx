@@ -6,28 +6,20 @@ import { fadeInUp, staggerContainer } from "@/lib/animations";
 
 const faqs = [
   {
-    q: "How long does it take to set up?",
-    a: "Most systems are fully built and live within 48 hours of our kick-off call. Complex multi-path quiz funnels may take 3-5 days.",
+    q: "What happens after I take the quiz?",
+    a: "You\u2019ll get a personalised growth report emailed to you within 60 seconds. It breaks down your #1 bottleneck and exactly what to do about it \u2014 no fluff, no generic advice.",
   },
   {
-    q: "Do I need GoHighLevel already?",
-    a: "No. We handle the full GHL setup as part of the service. You don't need any prior experience or tools.",
+    q: "How long does the quiz take?",
+    a: "Under 2 minutes. It\u2019s 5 questions. You\u2019ll spend more time reading the results than answering.",
   },
   {
-    q: "What makes your funnels different?",
-    a: "Most funnels treat every lead the same. Ours don't. Every person gets a different experience based on their quiz answers — different emails, different offers, different sequences.",
+    q: "Is this actually free?",
+    a: "100% free. No credit card. No obligation. We built this to help coaches understand what\u2019s holding them back \u2014 and to show you what\u2019s possible when the right system is in place.",
   },
   {
-    q: "How much does it cost?",
-    a: "Every project is scoped based on what you need. Book a free strategy call and we'll give you a clear breakdown with no surprises.",
-  },
-  {
-    q: "Do you work outside coaching?",
-    a: "We started with coaches but the same system works for consultants, course creators, service businesses, and more.",
-  },
-  {
-    q: "What results can I expect?",
-    a: "Our systems consistently improve lead quality, increase booking rates, and reduce manual workload — often within the first 30 days.",
+    q: "What if I already know my problem?",
+    a: "Then the quiz will either confirm it or surprise you. Most coaches think their issue is lead gen when it\u2019s actually follow-up \u2014 or vice versa. The data doesn\u2019t lie.",
   },
 ];
 
@@ -41,11 +33,11 @@ function FAQItem({ faq }: { faq: { q: string; a: string } }) {
         onClick={() => setOpen(!open)}
         aria-expanded={open}
       >
-        <span className="font-satoshi font-medium text-[17px] text-[#0a0a0a] pr-4">
+        <span className="font-satoshi font-medium text-[15px] sm:text-[17px] text-[#0a0a0a] pr-4">
           {faq.q}
         </span>
         <span className="text-[#7c3aed] text-xl flex-shrink-0 w-6 h-6 flex items-center justify-center">
-          {open ? "−" : "+"}
+          {open ? "\u2212" : "+"}
         </span>
       </button>
       <AnimatePresence initial={false}>
@@ -57,7 +49,7 @@ function FAQItem({ faq }: { faq: { q: string; a: string } }) {
             transition={{ duration: 0.3, ease: "easeOut" }}
             className="overflow-hidden"
           >
-            <p className="font-satoshi text-[15px] text-[#9ca3af] leading-[1.8] pb-5 pt-1">
+            <p className="font-satoshi text-[14px] sm:text-[15px] text-[#9ca3af] leading-[1.8] pb-5 pt-1">
               {faq.a}
             </p>
           </motion.div>
@@ -72,7 +64,7 @@ export default function FAQ() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="bg-white py-[100px]" id="faq">
+    <section className="bg-white py-16 sm:py-[100px]" id="faq">
       <motion.div
         ref={ref}
         variants={staggerContainer}
@@ -88,7 +80,7 @@ export default function FAQ() {
         </motion.p>
         <motion.h2
           variants={fadeInUp}
-          className="text-[#0a0a0a] text-center mb-12"
+          className="text-[#0a0a0a] text-center mb-10 sm:mb-12"
         >
           Questions We Get Asked A Lot
         </motion.h2>

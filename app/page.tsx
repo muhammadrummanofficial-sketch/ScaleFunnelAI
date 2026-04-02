@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
-import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 
+const FloatingCTA = dynamic(() => import("@/components/FloatingCTA"));
 const SocialProof = dynamic(() => import("@/components/SocialProof"));
 const ForYouIf = dynamic(() => import("@/components/ForYouIf"));
 const HowItWorks = dynamic(() => import("@/components/HowItWorks"));
@@ -16,7 +16,7 @@ const Footer = dynamic(() => import("@/components/Footer"));
 export default function Home() {
   return (
     <>
-      <Navbar />
+      <FloatingCTA />
       <main>
         <Hero />
         <SocialProof />
