@@ -80,3 +80,17 @@ h3 {
   outline: 2px solid var(--purple);
   outline-offset: 2px;
 }
+
+/* Infinite scroll animation for logo strip */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 30s linear infinite;
+}
