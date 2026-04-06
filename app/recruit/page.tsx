@@ -6,7 +6,7 @@ import { useState, FormEvent } from "react";
 function Hero() {
   return (
     <section
-      style={{ background: "#b50202", padding: "80px 24px" }}
+      style={{ background: "#000000", padding: "80px 24px" }}
       className="recruit-hero"
     >
       <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center" }}>
@@ -521,7 +521,7 @@ function SocialProofBar() {
 /* ────────────────── Closing CTA ────────────────────────── */
 function ClosingCTA() {
   return (
-    <section style={{ background: "#b50202", padding: "60px 24px" }}>
+    <section style={{ background: "#000000", padding: "60px 24px" }}>
       <div style={{ maxWidth: 600, margin: "0 auto", textAlign: "center" }}>
         <h2
           style={{
