@@ -518,6 +518,133 @@ function SocialProofBar() {
   );
 }
 
+/* ──────────────────────── FAQ ──────────────────────────── */
+const faqs = [
+  {
+    q: "What kind of agents are you looking for?",
+    a: "We are looking for motivated self-starters who want to build a real income. No prior experience is required — just drive, coachability, and a willingness to follow a proven system.",
+  },
+  {
+    q: "Is there a cost to join?",
+    a: "There is no cost to apply or join our team. We invest in your training and development from day one because your success is our success.",
+  },
+  {
+    q: "How does the training work?",
+    a: "You get immediate access to our complete training system — scripts, frameworks, live coaching calls, and one-on-one mentorship. Everything you need to start producing results fast.",
+  },
+  {
+    q: "How soon can I start earning?",
+    a: "Most agents start generating income within their first few weeks. Your results depend on your effort, but our system is designed to get you producing as quickly as possible.",
+  },
+  {
+    q: "Is this a remote position?",
+    a: "Yes. You can work from anywhere with an internet connection. We have agents across the country and internationally — all working on their own schedule.",
+  },
+  {
+    q: "What does a typical day look like?",
+    a: "There is no typical day — that is the point. You set your own hours and work around your life. Some agents work mornings, some evenings. You decide what works for you.",
+  },
+];
+
+function RecruitFAQ() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  return (
+    <section
+      style={{ background: "#ffffff", padding: "80px 24px" }}
+      className="recruit-faq-section"
+    >
+      <div style={{ maxWidth: 720, margin: "0 auto" }}>
+        <p
+          style={{
+            fontFamily: "Arial, sans-serif",
+            fontSize: 12,
+            fontWeight: 600,
+            letterSpacing: "0.15em",
+            color: "#9b9b9b",
+            textTransform: "uppercase",
+            textAlign: "center",
+            marginBottom: 16,
+          }}
+        >
+          FREQUENTLY ASKED QUESTIONS
+        </p>
+        <h2
+          style={{
+            fontFamily: "Georgia, serif",
+            fontSize: "clamp(24px, 4vw, 32px)",
+            fontWeight: "bold",
+            color: "#000000",
+            textAlign: "center",
+            marginBottom: 40,
+          }}
+        >
+          Got Questions? We Have Answers.
+        </h2>
+
+        {faqs.map((faq, i) => (
+          <div key={i} style={{ borderBottom: "1px solid #e0e0e0" }}>
+            <button
+              onClick={() => setOpenIndex(openIndex === i ? null : i)}
+              aria-expanded={openIndex === i}
+              style={{
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                padding: "20px 0",
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                textAlign: "left",
+              }}
+            >
+              <span
+                style={{
+                  fontFamily: "Arial, sans-serif",
+                  fontWeight: 600,
+                  fontSize: "clamp(14px, 2vw, 16px)",
+                  color: "#000000",
+                  paddingRight: 16,
+                }}
+              >
+                {faq.q}
+              </span>
+              <span
+                style={{
+                  color: "#b50202",
+                  fontSize: 20,
+                  flexShrink: 0,
+                  width: 24,
+                  height: 24,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                {openIndex === i ? "−" : "+"}
+              </span>
+            </button>
+            {openIndex === i && (
+              <p
+                style={{
+                  fontFamily: "Arial, sans-serif",
+                  fontSize: 14,
+                  color: "#9b9b9b",
+                  lineHeight: 1.8,
+                  paddingBottom: 20,
+                }}
+              >
+                {faq.a}
+              </p>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 /* ────────────────── Closing CTA ────────────────────────── */
 function ClosingCTA() {
   return (
@@ -614,7 +741,8 @@ export default function RecruitPage() {
           .recruit-hero {
             padding: 48px 24px !important;
           }
-          .recruit-form-section {
+          .recruit-form-section,
+          .recruit-faq-section {
             padding: 48px 24px !important;
           }
         }
@@ -623,6 +751,7 @@ export default function RecruitPage() {
         <Hero />
         <FormSection />
         <SocialProofBar />
+        <RecruitFAQ />
         <ClosingCTA />
       </div>
     </>
